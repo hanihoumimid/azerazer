@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>azerazer - Agence Web Créative</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-button { background-image: linear-gradient(to right, #6EE7B7 0%, #3B82F6 100%); }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="text-2xl font-bold text-gray-900">azerazer Agence Web</a>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Accueil</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                    <a href="#realisations" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Réalisations</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button @click="open = !open" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg x-show="!open" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg x-show="open" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#hero" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Accueil</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Services</a>
+                <a href="#realisations" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Réalisations</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Split Screen) -->
+    <header id="hero" class="relative bg-white pt-16 lg:h-screen flex items-center justify-center overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-0 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="flex flex-col justify-center" data-aos="fade-up" data-aos-duration="1000">
+                    <h1 class="text-5xl md:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
+                        Créez une <br><span class="text-blue-600">Présence Digitale</span> <br>Impactante
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        Votre agence web dédiée à la performance. Nous concevons des sites modernes, esthétiques et efficaces pour propulser votre activité.
+                    </p>
+                    <a href="#contact" class="inline-block px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg transform transition duration-300 hover:scale-105 gradient-button">
+                        Démarrer Votre Projet
+                    </a>
+                </div>
+                <!-- Right Image -->
+                <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="w-full max-w-lg lg:max-w-none lg:w-[500px] h-[400px] lg:h-[600px] rounded-3xl shadow-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Équipe de développement web" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-16" data-aos="fade-up">
+                Nos Services pour Votre Succès
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Card 1: Création de Sites Web -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=800&q=80" alt="Service Création Site Web" class="w-full h-48 object-cover rounded-md">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Création de Sites Web</h3>
+                    <p class="text-gray-600 mb-4">Développement de sites vitrines, e-commerce ou sur mesure, optimisés pour la performance et l'expérience utilisateur.</p>
+                    <a href="#contact" class="text-blue-600 font-medium hover:underline">En savoir plus &rarr;</a>
+                </div>
+
+                <!-- Card 2: Référencement SEO -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center mb-6">
+                         <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80" alt="Service SEO" class="w-full h-48 object-cover rounded-md">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Référencement SEO</h3>
+                    <p class="text-gray-600 mb-4">Augmentez votre visibilité sur les moteurs de recherche et attirez plus de clients qualifiés grâce à nos stratégies SEO.</p>
+                    <a href="#contact" class="text-blue-600 font-medium hover:underline">En savoir plus &rarr;</a>
+                </div>
+
+                <!-- Card 3: Maintenance & Support -->
+                <div class="bg-white rounded-xl shadow-lg p-8 transform transition duration-300 hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center mb-6">
+                         <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80" alt="Service Maintenance" class="w-full h-48 object-cover rounded-md">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Maintenance & Support</h3>
+                    <p class="text-gray-600 mb-4">Assurez la sécurité et la performance continue de votre site avec nos plans de maintenance et support réactif.</p>
+                    <a href="#contact" class="text-blue-600 font-medium hover:underline">En savoir plus &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Réalisations Section (Placeholder) -->
+    <section id="realisations" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8" data-aos="fade-up">
+                Nos Réalisations
+            </h2>
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Découvrez quelques-uns de nos projets récents qui ont aidé nos clients à atteindre leurs objectifs. (Section à étoffer avec des images de projets)
+            </p>
+            <a href="#contact" class="inline-block px-8 py-3 rounded-full text-white font-semibold text-lg shadow-lg transform transition duration-300 hover:scale-105 gradient-button" data-aos="fade-up" data-aos-delay="200">
+                Voir Nos Projets
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Contactez-Nous
+            </h2>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="order-2 lg:order-1" data-aos="fade-right" data-aos-duration="1000">
+                    <form class="bg-white p-8 rounded-xl shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nom</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre Nom Complet">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Votre Email">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Décrivez votre projet ou question..."></textarea>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <button type="submit" class="px-8 py-3 rounded-full text-white font-semibold text-lg shadow-lg transform transition duration-300 hover:scale-105 gradient-button">
+                                Envoyer le Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="order-1 lg:order-2 flex justify-center" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="w-full max-w-lg lg:max-w-none lg:w-[500px] h-[350px] lg:h-[500px] rounded-3xl shadow-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80" alt="Contactez notre équipe" class="w-full h-full object-cover object-center">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; <span x-data x-text="new Date().getFullYear()"></span> azerazer Agence Web. Tous droits réservés.</p>
+            <div class="mt-4">
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Mentions Légales</a>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true });
+    </script>
+</body>
+</html>
